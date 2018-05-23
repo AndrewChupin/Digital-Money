@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactTableViewCell" customModule="Avenue" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="V0b-Xc-qhc" customClass="ContactTableViewCell" customModule="Avenue" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V0b-Xc-qhc" id="FG0-uF-FZf">
+                <rect key="frame" x="0.0" y="0.0" width="428" height="79.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RUA-py-Tps">
+                        <rect key="frame" x="16" y="15.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="B1f-hR-hjg"/>
+                            <constraint firstAttribute="height" constant="50" id="vLn-TE-1B4"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TuB-Ro-ijh">
+                        <rect key="frame" x="78" y="19.5" width="334" height="42"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgR-o4-c0a">
+                                <rect key="frame" x="0.0" y="0.0" width="334" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUt-jG-vyO">
+                                <rect key="frame" x="0.0" y="25" width="334" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.41568627450000001" green="0.4431372549" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LgR-o4-c0a" firstAttribute="leading" secondItem="TuB-Ro-ijh" secondAttribute="leading" id="K7Y-Co-dLe"/>
+                            <constraint firstItem="LgR-o4-c0a" firstAttribute="top" secondItem="TuB-Ro-ijh" secondAttribute="top" id="b2A-Up-vw3"/>
+                            <constraint firstItem="IUt-jG-vyO" firstAttribute="top" secondItem="LgR-o4-c0a" secondAttribute="bottom" constant="4" id="dYj-vD-EHb"/>
+                            <constraint firstAttribute="trailing" secondItem="LgR-o4-c0a" secondAttribute="trailing" id="dex-5N-3fo"/>
+                            <constraint firstItem="IUt-jG-vyO" firstAttribute="leading" secondItem="TuB-Ro-ijh" secondAttribute="leading" id="jSd-Oz-iFk"/>
+                            <constraint firstAttribute="trailing" secondItem="IUt-jG-vyO" secondAttribute="trailing" id="pi1-Mq-Ocw"/>
+                            <constraint firstAttribute="bottom" secondItem="IUt-jG-vyO" secondAttribute="bottom" id="svW-jk-83R"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="TuB-Ro-ijh" secondAttribute="trailing" constant="16" id="Axg-29-5eu"/>
+                    <constraint firstItem="TuB-Ro-ijh" firstAttribute="centerY" secondItem="FG0-uF-FZf" secondAttribute="centerY" id="Cof-oW-uxC"/>
+                    <constraint firstItem="TuB-Ro-ijh" firstAttribute="leading" secondItem="RUA-py-Tps" secondAttribute="trailing" constant="12" id="RwV-Cy-KI1"/>
+                    <constraint firstItem="RUA-py-Tps" firstAttribute="leading" secondItem="FG0-uF-FZf" secondAttribute="leading" constant="16" id="Zlb-xY-XOj"/>
+                    <constraint firstItem="RUA-py-Tps" firstAttribute="centerY" secondItem="FG0-uF-FZf" secondAttribute="centerY" id="jTO-f1-5aY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageContact" destination="RUA-py-Tps" id="Cfh-C8-9zw"/>
+                <outlet property="labelContactName" destination="LgR-o4-c0a" id="4cx-Z7-am8"/>
+                <outlet property="labelContactPhone" destination="IUt-jG-vyO" id="kIr-Mu-6Ba"/>
+            </connections>
+            <point key="canvasLocation" x="124" y="113"/>
+        </tableViewCell>
+    </objects>
+</document>
