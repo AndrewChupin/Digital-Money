@@ -24,18 +24,23 @@
 		AF30E7E1206FE1B7003D73E2 /* ContactsTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30E7E0206FE1B7003D73E2 /* ContactsTarget.swift */; };
 		AF30E7E3206FE231003D73E2 /* AvenueApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30E7E2206FE231003D73E2 /* AvenueApi.swift */; };
 		AF30E7E5206FE2B3003D73E2 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF30E7E4206FE2B3003D73E2 /* AppConfig.swift */; };
+		AF442ABC20B60525006E654F /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF442ABB20B60525006E654F /* BaseRepository.swift */; };
+		AF442ABE20B608E2006E654F /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF442ABD20B608E2006E654F /* SettingsRepository.swift */; };
+		AF442AC020B60942006E654F /* SettingsRepositoryDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF442ABF20B60942006E654F /* SettingsRepositoryDefault.swift */; };
+		AF442AC220B60AFB006E654F /* DefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF442AC120B60AFB006E654F /* DefaultExtensions.swift */; };
+		AF442AC520B60C77006E654F /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF442AC420B60C77006E654F /* ContactsRouter.swift */; };
 		AF802129206F533000849EBF /* Avenue.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF802127206F533000849EBF /* Avenue.xcdatamodeld */; };
 		AF80212B206F533000849EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF80212A206F533000849EBF /* Assets.xcassets */; };
 		AF80212E206F533000849EBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF80212C206F533000849EBF /* LaunchScreen.storyboard */; };
 		AF802139206F533000849EBF /* AvenueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF802138206F533000849EBF /* AvenueTests.swift */; };
 		AF802144206F533000849EBF /* AvenueUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF802143206F533000849EBF /* AvenueUITests.swift */; };
-		AF80215D206F5F6600849EBF /* AvenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80215C206F5F6600849EBF /* AvenueViewController.swift */; };
+		AF80215D206F5F6600849EBF /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80215C206F5F6600849EBF /* BaseViewController.swift */; };
 		AF802160206F5FE000849EBF /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80215F206F5FE000849EBF /* ContactsViewController.swift */; };
 		AF802162206F600300849EBF /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF802161206F600300849EBF /* ContactsViewModel.swift */; };
 		AF802165206F602300849EBF /* AvenueInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF802164206F602300849EBF /* AvenueInteractor.swift */; };
 		AF80216B206F608300849EBF /* ContactsInteractorReactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80216A206F608300849EBF /* ContactsInteractorReactive.swift */; };
 		AF802171206F6F6400849EBF /* ContactsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF802170206F6F6400849EBF /* ContactsViewDelegate.swift */; };
-		AF802174206F6F8700849EBF /* AvenueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF802173206F6F8700849EBF /* AvenueViewModel.swift */; };
+		AF802174206F6F8700849EBF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF802173206F6F8700849EBF /* BaseViewModel.swift */; };
 		AF81C27E206F8EE800656E8F /* ContactsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF81C27D206F8EE800656E8F /* ContactsView.xib */; };
 		AF81C281206F919C00656E8F /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF81C280206F919C00656E8F /* ContactTableViewCell.swift */; };
 		AF81C283206F91BA00656E8F /* ContactCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF81C282206F91BA00656E8F /* ContactCellView.xib */; };
@@ -85,6 +90,11 @@
 		AF30E7E0206FE1B7003D73E2 /* ContactsTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTarget.swift; sourceTree = "<group>"; };
 		AF30E7E2206FE231003D73E2 /* AvenueApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvenueApi.swift; sourceTree = "<group>"; };
 		AF30E7E4206FE2B3003D73E2 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		AF442ABB20B60525006E654F /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		AF442ABD20B608E2006E654F /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
+		AF442ABF20B60942006E654F /* SettingsRepositoryDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepositoryDefault.swift; sourceTree = "<group>"; };
+		AF442AC120B60AFB006E654F /* DefaultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultExtensions.swift; sourceTree = "<group>"; };
+		AF442AC420B60C77006E654F /* ContactsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRouter.swift; sourceTree = "<group>"; };
 		AF80211D206F533000849EBF /* Avenue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Avenue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF802128206F533000849EBF /* Avenue.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Avenue.xcdatamodel; sourceTree = "<group>"; };
 		AF80212A206F533000849EBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,13 +106,13 @@
 		AF80213F206F533000849EBF /* AvenueUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvenueUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF802143206F533000849EBF /* AvenueUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvenueUITests.swift; sourceTree = "<group>"; };
 		AF802145206F533000849EBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF80215C206F5F6600849EBF /* AvenueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvenueViewController.swift; sourceTree = "<group>"; };
+		AF80215C206F5F6600849EBF /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AF80215F206F5FE000849EBF /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		AF802161206F600300849EBF /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		AF802164206F602300849EBF /* AvenueInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvenueInteractor.swift; sourceTree = "<group>"; };
 		AF80216A206F608300849EBF /* ContactsInteractorReactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInteractorReactive.swift; sourceTree = "<group>"; };
 		AF802170206F6F6400849EBF /* ContactsViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewDelegate.swift; sourceTree = "<group>"; };
-		AF802173206F6F8700849EBF /* AvenueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvenueViewModel.swift; sourceTree = "<group>"; };
+		AF802173206F6F8700849EBF /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		AF81C27D206F8EE800656E8F /* ContactsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsView.xib; sourceTree = "<group>"; };
 		AF81C280206F919C00656E8F /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		AF81C282206F91BA00656E8F /* ContactCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCellView.xib; sourceTree = "<group>"; };
@@ -187,6 +197,7 @@
 		682527E15CA6A215239347BB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				AF442AC120B60AFB006E654F /* DefaultExtensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -246,6 +257,14 @@
 			);
 			name = Core;
 			path = ../Core;
+			sourceTree = "<group>";
+		};
+		AF442AC320B60C65006E654F /* Reouter */ = {
+			isa = PBXGroup;
+			children = (
+				AF442AC420B60C77006E654F /* ContactsRouter.swift */,
+			);
+			path = Reouter;
 			sourceTree = "<group>";
 		};
 		AF802114206F533000849EBF = {
@@ -395,7 +414,7 @@
 		AF80215B206F5D2000849EBF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AF80215C206F5F6600849EBF /* AvenueViewController.swift */,
+				AF80215C206F5F6600849EBF /* BaseViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -403,6 +422,7 @@
 		AF80215E206F5F7100849EBF /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				AF442AC320B60C65006E654F /* Reouter */,
 				AF80216E206F6F2D00849EBF /* ViewModel */,
 				AF80216D206F6EF600849EBF /* View */,
 			);
@@ -428,6 +448,7 @@
 		AF802167206F603900849EBF /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				AF442ABB20B60525006E654F /* BaseRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -444,6 +465,8 @@
 		AF802169206F606E00849EBF /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				AF442ABD20B608E2006E654F /* SettingsRepository.swift */,
+				AF442ABF20B60942006E654F /* SettingsRepositoryDefault.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -480,7 +503,7 @@
 		AF802172206F6F7600849EBF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				AF802173206F6F8700849EBF /* AvenueViewModel.swift */,
+				AF802173206F6F8700849EBF /* BaseViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -810,24 +833,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF80215D206F5F6600849EBF /* AvenueViewController.swift in Sources */,
+				AF80215D206F5F6600849EBF /* BaseViewController.swift in Sources */,
 				AF80216B206F608300849EBF /* ContactsInteractorReactive.swift in Sources */,
 				AF802165206F602300849EBF /* AvenueInteractor.swift in Sources */,
 				AF802162206F600300849EBF /* ContactsViewModel.swift in Sources */,
-				AF802174206F6F8700849EBF /* AvenueViewModel.swift in Sources */,
+				AF802174206F6F8700849EBF /* BaseViewModel.swift in Sources */,
+				AF442ABC20B60525006E654F /* BaseRepository.swift in Sources */,
 				AF30E7E3206FE231003D73E2 /* AvenueApi.swift in Sources */,
 				AF30E7E1206FE1B7003D73E2 /* ContactsTarget.swift in Sources */,
 				AF802171206F6F6400849EBF /* ContactsViewDelegate.swift in Sources */,
+				AF442AC020B60942006E654F /* SettingsRepositoryDefault.swift in Sources */,
 				AF802160206F5FE000849EBF /* ContactsViewController.swift in Sources */,
 				AF802129206F533000849EBF /* Avenue.xcdatamodeld in Sources */,
 				682526DF176D0B54012F6261 /* ContactsReferences.swift in Sources */,
 				682529303D034BC689E48925 /* Contact.swift in Sources */,
 				682523710D88F34FCB92B813 /* ContactsRepository.swift in Sources */,
+				AF442ABE20B608E2006E654F /* SettingsRepository.swift in Sources */,
 				AF30E7DF206FDFE7003D73E2 /* ContactRequest.swift in Sources */,
 				6825299851DE582B18589980 /* ContactsService.swift in Sources */,
 				6825294378B2474ADB2CC6E0 /* ContactsWebService.swift in Sources */,
 				682525A097C2FE4B74190403 /* AvenueError.swift in Sources */,
 				AF30E7DC206FDB65003D73E2 /* RequestData.swift in Sources */,
+				AF442AC220B60AFB006E654F /* DefaultExtensions.swift in Sources */,
 				682525654B3CD862C52A10B4 /* ContactCoreRepository.swift in Sources */,
 				AF81C281206F919C00656E8F /* ContactTableViewCell.swift in Sources */,
 				AF81C285206FAF5600656E8F /* Optional.swift in Sources */,
@@ -835,6 +862,7 @@
 				AF30E7E5206FE2B3003D73E2 /* AppConfig.swift in Sources */,
 				68252C1378E0248E9B6F846B /* ContactsUseCase.swift in Sources */,
 				682528C23EFACA76BBDD8438 /* ContactsUseCaseDefault.swift in Sources */,
+				AF442AC520B60C77006E654F /* ContactsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

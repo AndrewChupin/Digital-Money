@@ -6,9 +6,7 @@
 import Foundation
 
 enum AvenueError {
-
     case notAuthorization
     case badDataRequest
     case unknown
-
 }

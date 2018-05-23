@@ -7,11 +7,7 @@ import Foundation
 import RxSwift
 
 protocol ContactsRepository {
-
     var count: Int { get }
-
     func findAll() -> Single<[Contact]>
-
     func findPart(partNumber: Int) -> Single<[Contact]>
-
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AvenueViewController: UIViewController {
+class BaseViewController: UIViewController {
 
 
 

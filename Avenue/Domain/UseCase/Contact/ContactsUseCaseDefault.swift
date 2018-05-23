@@ -7,21 +7,20 @@ import Foundation
 import RxSwift
 
 class ContactsUseCaseDefault {
-
     let contactsService: ContactsService
     let contactsRepository: ContactsRepository
+    let settingsRepository: SettingsRepository
 
-    init(contactsService: ContactsService, contactsRepository: ContactsRepository) {
+    init(contactsService: ContactsService, contactsRepository: ContactsRepository, settingsRepository: SettingsRepository) {
         self.contactsService = contactsService
         self.contactsRepository = contactsRepository
+        self.settingsRepository = settingsRepository
     }
-
 }
 
 extension ContactsUseCaseDefault: ContactsUseCase {
-
     func findContacts() -> Single<[Contact]> {
-       return contactsService.getContacts(request: ContactRequest(token: "SOME_TOKEN")) // TOOD CHANGE TOKEN
+        let constactsToken = settingsRepository.constactsStateToken
+        return contactsService.getContacts(request: ContactRequest(token: constactsToken)) // TOOD CHANGE TOKEN
     }
-
 }

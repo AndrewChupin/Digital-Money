@@ -9,8 +9,6 @@
 import Foundation
 
 struct AppConfig {
-    
     static let avenueBaseUrl = "http://192.168.0.240:5000"
-    
 }
 

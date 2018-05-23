@@ -7,7 +7,5 @@ import Foundation
 import RxSwift
 
 protocol ContactsUseCase: class {
-
     func findContacts() -> Single<[Contact]>
-
 }

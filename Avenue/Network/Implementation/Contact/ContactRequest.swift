@@ -17,7 +17,6 @@ struct ContactRequest {
 }
 
 extension ContactRequest: RequestData {
-    
     func getArguments() -> Parameters {
         var result: Parameters = [:]
         result[ContactsParameters.token.rawValue] = token
@@ -31,5 +30,4 @@ extension ContactRequest: RequestData {
     func getBody() -> Parameters {
         return [:]
     }
-    
 }

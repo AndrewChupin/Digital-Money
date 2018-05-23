@@ -41,6 +41,5 @@ class ContactsViewModel: ContactsReference {
             })
             .disposed(by: dispose)
     }
-    
 }
 

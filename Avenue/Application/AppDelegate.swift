@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreData
-import Moya
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,13 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let contactsViewController = ContactsViewController(nibName: ContactsViewController.identification, bundle: nil)
-        contactsViewController.viewModel = ContactsViewModel(contactsInteractor:
-            ContactsInteractorDefault(
-                contactsUseCase: ContactsUseCaseDefault(
-                    contactsService: ContactsWebService(networkProvider: MoyaProvider<ContactsTarget>()),
-                    contactsRepository: ContactCoreRepository())))
-        let navigation = UINavigationController(rootViewController: contactsViewController)
+        
+        let navigation = UINavigationController(rootViewController: createConstactsScreen())
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigation

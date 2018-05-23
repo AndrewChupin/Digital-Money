@@ -51,6 +51,5 @@ extension ContactsTarget: TargetType {
             return request.getHeaders()
         }
     }
-    
 }
 

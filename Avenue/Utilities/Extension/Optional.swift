@@ -9,11 +9,9 @@
 import Foundation
 
 extension Optional {
-    
     func `let`(_ execution: (Wrapped!) -> Void) {
         if self != nil {
             execution(self!)
         }
     }
-    
 }

@@ -11,13 +11,11 @@ import RxSwift
 import RxCocoa
 
 class ReactiveViewController {
-
     fileprivate let disposable = DisposeBag()
-
 }
 
 
-class ContactsViewController: UIViewController {
+class ContactsViewController: BaseViewController {
     
     static let identification = "ContactsView"
     

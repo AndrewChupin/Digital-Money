@@ -7,7 +7,5 @@ import Foundation
 import RxSwift
 
 protocol ContactsService: class {
-
     func getContacts(request: ContactRequest) -> Single<[Contact]>
-
 }

@@ -6,22 +6,18 @@
 import Foundation
 
 final class Contact {
-
     let name: String
     let phone: String
     let image: String
-
 
     init(name: String, phone: String, image: String) {
         self.name = name
         self.phone = phone
         self.image = image
     }
-
 }
 
 extension Contact: Decodable {
-    
     enum ContactField: String, CodingKey { // declaring our keys
         case name = "name"
         case phone = "phone"
@@ -36,5 +32,4 @@ extension Contact: Decodable {
         
         self.init(name: name, phone: phone, image: image)
     }
-    
 }
