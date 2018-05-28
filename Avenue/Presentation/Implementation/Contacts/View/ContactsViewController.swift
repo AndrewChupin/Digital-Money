@@ -53,14 +53,12 @@ class ContactsViewController: BaseViewController {
     }
 
     func bindUsers(viewModel: ContactsReference) {
-        viewModel.contacts.bind(to: self.tableContacts.rx.items(cellIdentifier:ContactTableViewCell.identification, cellType: ContactTableViewCell.self)) { _, contact, cell in
+        viewModel.contacts.drive(self.tableContacts.rx.items(cellIdentifier:ContactTableViewCell.identification, cellType: ContactTableViewCell.self)) { _, contact, cell in
             cell.setup(with: contact)
         }
         .disposed(by: self.disposable)
     }
-
 }
-
 
 extension ContactsViewController: ContactsViewDelegate {
     

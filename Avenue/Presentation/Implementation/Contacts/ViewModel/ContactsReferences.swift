@@ -4,13 +4,12 @@
 //
 
 import Foundation
-import RxSwift
+import RxCocoa
 
-protocol ContactsReference {
+protocol ContactsReference: BaseReference {
     
     // Public
-    var contacts: Observable<[Contact]> { get }
-    var isLoading: Observable<Bool> { get }
+    var contacts: Driver<[Contact]> { get }
 
     func loadUsers()
     

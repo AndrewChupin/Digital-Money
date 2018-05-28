@@ -6,6 +6,7 @@ target 'Avenue' do
   use_frameworks!
 
   # Pods for Avenue
+  pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
   pod 'Moya', '~> 10.0'
   pod 'Moya/RxSwift', '~> 10.0'
