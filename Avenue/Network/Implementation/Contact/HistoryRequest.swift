@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ContactsParameters: String {
+enum HistoryParameters: String {
     case token = "token"
 }
 
@@ -19,7 +19,7 @@ struct ContactRequest {
 extension ContactRequest: RequestData {
     func getArguments() -> Parameters {
         var result: Parameters = [:]
-        result[ContactsParameters.token.rawValue] = token
+        result[HistoryParameters.token.rawValue] = token
         return result
     }
     

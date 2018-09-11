@@ -11,12 +11,12 @@ import RxSwift
 import RxCocoa
 
 
-final class ContactsViewController: BaseViewController<ContactsViewModel, ContactsViewState> {
+final class HistoryViewController: BaseViewController<HistoryViewModel, HistoryViewState> {
     
-    static let identification = "ContactsView"
+    static let identification = "HistoryView"
     
     // View reference
-    @IBOutlet weak var tableContacts: UITableView!
+    @IBOutlet weak var tableHistory: UITableView!
     
     // Bind reference
     fileprivate var contacts: [Contact] = []
@@ -26,9 +26,7 @@ final class ContactsViewController: BaseViewController<ContactsViewModel, Contac
         super.viewDidLoad()
         prepareTable()
         
-        self.tableContacts.rowHeight = 80.0
-        
-        self.reducer?.reduce(with: .loadContacts)
+        self.reducer?.reduce(with: .loadHistory)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,11 +35,11 @@ final class ContactsViewController: BaseViewController<ContactsViewModel, Contac
     }
 
     private func prepareTable() {
-        self.tableContacts.register(ContactTableViewCell.nib, forCellReuseIdentifier: ContactTableViewCell.identification)
+        self.tableHistory.register(ContactTableViewCell.nib, forCellReuseIdentifier: ContactTableViewCell.identification)
     }
     
-    override func render(viewState: ContactsViewState) {
-        /*viewState.contacts.drive(self.tableContacts.rx.items(cellIdentifier:ContactTableViewCell.identification, cellType: ContactTableViewCell.self)) { _, contact, cell in
+    override func render(viewState: HistoryViewState) {
+        /*viewState.contacts.drive(self.tableHistory.rx.items(cellIdentifier:ContactTableViewCell.identification, cellType: ContactTableViewCell.self)) { _, contact, cell in
             cell.setup(with: contact)
             }
             .disposed(by: self.disposable)*/

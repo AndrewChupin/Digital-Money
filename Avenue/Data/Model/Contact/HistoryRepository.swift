@@ -6,7 +6,7 @@
 import Foundation
 import RxSwift
 
-protocol ContactsRepository {
+protocol HistoryRepository {
     var count: Int { get }
     func findAll() -> Single<[Contact]>
     func findPart(partNumber: Int) -> Single<[Contact]>

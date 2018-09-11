@@ -11,12 +11,12 @@ import RxSwift
 import RxCocoa
 
 // MARK - Actions
-enum ContactsActions: Actionable {
-    case loadContacts
+enum HistoryActions: Actionable {
+    case loadHistory
 }
 
 // MARK - ViewState
-class ContactsViewState: BaseViewState {
+class HistoryViewState: BaseViewState {
     var primaryState: PrimaryState = .common
     var contacts: [Contact] = []
     
@@ -26,38 +26,38 @@ class ContactsViewState: BaseViewState {
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
-        return ContactsViewState()
+        return HistoryViewState()
     }
 }
 
 // MARK - Reducer
-protocol ContactsStatementReducer: StatmentReducer where Action == ContactsActions, ViewState == ContactsViewState {}
+protocol HistoryStatementReducer: StatmentReducer where Action == HistoryActions, ViewState == HistoryViewState {}
 
 // MARK - ViewModel
-class ContactsViewModel: BaseViewModel, ContactsStatementReducer {
+class HistoryViewModel: BaseViewModel, HistoryStatementReducer {
     
     // Use Cases
-    private var contactsInteractor: ContactsInteractor
+    private var contactsInteractor: HistoryInteractor
     // Data
-    var viewState: BehaviorRelay<ContactsViewState> = BehaviorRelay(value: ContactsViewState())
+    var viewState: BehaviorRelay<HistoryViewState> = BehaviorRelay(value: HistoryViewState())
     
     // Constructor
-    init(contactsInteractor: ContactsInteractor) {
+    init(contactsInteractor: HistoryInteractor) {
         self.contactsInteractor = contactsInteractor
     }
     
-    func reduce(with action: ContactsActions) {
+    func reduce(with action: HistoryActions) {
         switch action {
-        case .loadContacts:
+        case .loadHistory:
             loadUsers()
         }
     }
     
     // Actions
     private func loadUsers() {
-        contactsInteractor.findContacts()
+        contactsInteractor.findHistory()
             .bindSubscribe(success: { [weak self] (contactsData) in
-                self?.viewState.accept(ContactsViewState(contacts: contactsData))
+                self?.viewState.accept(HistoryViewState(contacts: contactsData))
             })
     }
 }

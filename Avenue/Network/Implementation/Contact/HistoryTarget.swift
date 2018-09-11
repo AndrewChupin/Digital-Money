@@ -1,6 +1,6 @@
 
 //
-//  ContactsTarget.swift
+//  HistoryTarget.swift
 //  Avenue
 //
 //  Created by Andrew Chupin on 31.03.2018.
@@ -10,11 +10,11 @@
 import Foundation
 import Moya
 
-enum ContactsTarget {
-    case loadContacts(request: RequestData)
+enum HistoryTarget {
+    case loadHistory(request: RequestData)
 }
 
-extension ContactsTarget: TargetType {
+extension HistoryTarget: TargetType {
     
     var baseURL: URL {
         return URL(string: AppConfig.avenueBaseUrl)!
@@ -22,14 +22,14 @@ extension ContactsTarget: TargetType {
     
     var path: String {
         switch self {
-        case .loadContacts:
-            return AvenueApi.getContacts.rawValue
+        case .loadHistory:
+            return AvenueApi.getHistory.rawValue
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .loadContacts:
+        case .loadHistory:
             return .get
         }
     }
@@ -40,14 +40,14 @@ extension ContactsTarget: TargetType {
     
     var task: Task {
         switch self {
-        case .loadContacts(let request):
+        case .loadHistory(let request):
             return .requestParameters(parameters: request.getArguments(), encoding: URLEncoding.default)
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .loadContacts(let request):
+        case .loadHistory(let request):
             return request.getHeaders()
         }
     }

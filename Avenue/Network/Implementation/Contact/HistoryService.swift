@@ -6,6 +6,6 @@
 import Foundation
 import RxSwift
 
-protocol ContactsService: class {
-    func getContacts(request: ContactRequest) -> Single<[Contact]>
+protocol HistoryService: class {
+    func getHistory(request: ContactRequest) -> Single<[Contact]>
 }

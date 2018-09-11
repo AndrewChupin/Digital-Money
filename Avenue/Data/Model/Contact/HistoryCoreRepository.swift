@@ -10,7 +10,7 @@ class ContactCoreRepository {
 
 }
 
-extension ContactCoreRepository: ContactsRepository {
+extension ContactCoreRepository: HistoryRepository {
 
     var count: Int {
         return 12

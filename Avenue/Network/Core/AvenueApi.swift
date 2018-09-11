@@ -9,6 +9,6 @@
 import Foundation
 
 enum AvenueApi: String {
-    case getContacts = "/contacts"
+    case getHistory = "/contacts"
 }
 

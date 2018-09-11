@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SettingsRepository: Repository {
+protocol SettingsRepository {
     var constactsStateToken: String { get set }
 }
 

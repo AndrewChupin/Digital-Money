@@ -7,20 +7,20 @@ import Foundation
 import Moya
 import RxSwift
 
-class ContactsWebService {
-    let networkProvider: MoyaProvider<ContactsTarget>
+class HistoryWebService {
+    let networkProvider: MoyaProvider<HistoryTarget>
 
-    init(networkProvider: MoyaProvider<ContactsTarget>) {
+    init(networkProvider: MoyaProvider<HistoryTarget>) {
         self.networkProvider = networkProvider;
     }
 }
 
 
-extension ContactsWebService: ContactsService {
-    func getContacts(request: ContactRequest) -> Single<[Contact]> {
+extension HistoryWebService: HistoryService {
+    func getHistory(request: ContactRequest) -> Single<[Contact]> {
         return networkProvider
             .rx
-            .request(.loadContacts(request: request), callbackQueue: DispatchQueue.global(qos: .background))
+            .request(.loadHistory(request: request), callbackQueue: DispatchQueue.global(qos: .background))
             .map([Contact].self)
             .flatMap({ contacts in
                 return Single.just(contacts)

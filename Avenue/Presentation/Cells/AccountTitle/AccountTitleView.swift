@@ -7,7 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 final class AccountTitleView: NibView {
     
+    @IBOutlet weak var imageBackgrount: UIImageView!
+    @IBOutlet weak var labelBalance: UILabel!
+    @IBOutlet weak var labelOffer: UILabel!
 }
