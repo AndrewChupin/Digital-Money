@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
-class BaseViewController: UIViewController {
-
-
-
+class BaseViewController<ReducerType: StatmentReducer, ViewStateType: BaseViewState>: UIViewController, Renderable {
+    typealias ViewState = ViewStateType
+    var reducer: ReducerType? = nil
+    let bag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        reducer?.viewState.asDriver().drive(onNext: { vs in
+            
+        }, onCompleted: {
+            
+        }, onDisposed: {
+            
+        }).disposed(by: bag)
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,15 +35,7 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func render(viewState: ViewStateType) {
+        // Do nothing
     }
-    */
-
 }

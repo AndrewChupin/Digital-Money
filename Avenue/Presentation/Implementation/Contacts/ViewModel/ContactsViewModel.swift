@@ -10,52 +10,55 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-enum BaseError: Error {
-    case base
+// MARK - Actions
+enum ContactsActions: Actionable {
+    case loadContacts
 }
 
-class ContactsViewModel: ContactsReference {
+// MARK - ViewState
+class ContactsViewState: BaseViewState {
+    var primaryState: PrimaryState = .common
+    var contacts: [Contact] = []
     
-    // Data
-    private var contactsList = BehaviorRelay<[Contact]>(value: [])
-    private var isLoadingData = BehaviorRelay(value: false)
-    private var errorData = BehaviorRelay<Error>(value: BaseError.base)
-    
-    // Bindable Data
-    var contacts: Driver<[Contact]> {
-        return self.contactsList.asDriver()
+    init(state: PrimaryState = .common, contacts: [Contact] = []) {
+        self.primaryState = state
+        self.contacts = contacts
     }
     
-    var error: Driver<Error> {
-        return self.errorData.asDriver()
+    func copy(with zone: NSZone? = nil) -> Any {
+        return ContactsViewState()
     }
-    
-    var isLoading: Driver<Bool> {
-        return self.isLoadingData.asDriver()
-    }
-    
-    // Dispose
-    private let dispose = DisposeBag()
+}
+
+// MARK - Reducer
+protocol ContactsStatementReducer: StatmentReducer where Action == ContactsActions, ViewState == ContactsViewState {}
+
+// MARK - ViewModel
+class ContactsViewModel: BaseViewModel, ContactsStatementReducer {
     
     // Use Cases
     private var contactsInteractor: ContactsInteractor
+    // Data
+    var viewState: BehaviorRelay<ContactsViewState> = BehaviorRelay(value: ContactsViewState())
     
     // Constructor
     init(contactsInteractor: ContactsInteractor) {
         self.contactsInteractor = contactsInteractor
     }
     
+    func reduce(with action: ContactsActions) {
+        switch action {
+        case .loadContacts:
+            loadUsers()
+        }
+    }
+    
     // Actions
-    func loadUsers() {
+    private func loadUsers() {
         contactsInteractor.findContacts()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .observeOn(MainScheduler.instance)
-            .subscribe(onSuccess: { [weak self] (contactsData) in
-                self?.contactsList.accept(contactsData)
-            }, onError: { [weak self] (e) in
-                self?.errorData.accept(e)
+            .bindSubscribe(success: { [weak self] (contactsData) in
+                self?.viewState.accept(ContactsViewState(contacts: contactsData))
             })
-            .disposed(by: dispose)
     }
 }
 

@@ -13,21 +13,21 @@ protocol ContactsInteractor {
     func findContacts() -> Single<[Contact]>
 }
 
-
-class ContactsInteractorDefault {
-
-    let contactsUseCase: ContactsUseCase
-
-    init(contactsUseCase: ContactsUseCase) {
-        self.contactsUseCase = contactsUseCase
+final class ContactsInteractorDefault {
+    private let contactsService: ContactsService
+    private let contactsRepository: ContactsRepository
+    private let settingsRepository: SettingsRepository
+    
+    init(contactsService: ContactsService, contactsRepository: ContactsRepository, settingsRepository: SettingsRepository) {
+        self.contactsService = contactsService
+        self.contactsRepository = contactsRepository
+        self.settingsRepository = settingsRepository
     }
-
 }
 
 extension ContactsInteractorDefault: ContactsInteractor {
-
     func findContacts() -> Single<[Contact]> {
-        return contactsUseCase.findContacts()
+        let constactsToken = settingsRepository.constactsStateToken
+        return contactsService.getContacts(request: ContactRequest(token: constactsToken)) // TOOD CHANGE TOKEN
     }
-    
 }

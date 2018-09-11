@@ -6,8 +6,8 @@
 //  Copyright © 2018 Andrew Chupin. All rights reserved.
 //
 
-import Foundation
+import RxSwift
 
-class BaseViewModel {
+class BaseViewModel: ReactiveActions {
     
 }

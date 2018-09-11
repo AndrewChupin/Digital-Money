@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class ContactTableViewCell: UITableViewCell {
+final class ContactTableViewCell: UITableViewCell {
     
     static let identification = "ContactCellView"
     static let nib = UINib(nibName: ContactTableViewCell.identification, bundle: nil)

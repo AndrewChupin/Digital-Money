@@ -10,20 +10,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ReactiveViewController {
-    fileprivate let disposable = DisposeBag()
-}
 
-
-class ContactsViewController: BaseViewController {
+final class ContactsViewController: BaseViewController<ContactsViewModel, ContactsViewState> {
     
     static let identification = "ContactsView"
     
     // View reference
     @IBOutlet weak var tableContacts: UITableView!
-
-    // Extern dependencies
-    var viewModel: ContactsReference?
     
     // Bind reference
     fileprivate var contacts: [Contact] = []
@@ -35,12 +28,7 @@ class ContactsViewController: BaseViewController {
         
         self.tableContacts.rowHeight = 80.0
         
-        self.viewModel.let {
-           bindUsers(viewModel: $0)
-        }
-        
-        self.viewModel?.loadUsers()
-        
+        self.reducer?.reduce(with: .loadContacts)
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,16 +39,12 @@ class ContactsViewController: BaseViewController {
     private func prepareTable() {
         self.tableContacts.register(ContactTableViewCell.nib, forCellReuseIdentifier: ContactTableViewCell.identification)
     }
-
-    func bindUsers(viewModel: ContactsReference) {
-        viewModel.contacts.drive(self.tableContacts.rx.items(cellIdentifier:ContactTableViewCell.identification, cellType: ContactTableViewCell.self)) { _, contact, cell in
-            cell.setup(with: contact)
-        }
-        .disposed(by: self.disposable)
-    }
-}
-
-extension ContactsViewController: ContactsViewDelegate {
     
+    override func render(viewState: ContactsViewState) {
+        /*viewState.contacts.drive(self.tableContacts.rx.items(cellIdentifier:ContactTableViewCell.identification, cellType: ContactTableViewCell.self)) { _, contact, cell in
+            cell.setup(with: contact)
+            }
+            .disposed(by: self.disposable)*/
+    }
 }
 

@@ -21,6 +21,15 @@ DEPENDENCIES:
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Kingfisher
+    - Moya
+    - Result
+    - RxCocoa
+    - RxSwift
+
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
@@ -31,4 +40,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4df6542daba05f0b61f0c873ed9ad3088bdf9d2f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
