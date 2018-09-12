@@ -15,7 +15,6 @@ class HistoryWebService {
     }
 }
 
-
 extension HistoryWebService: HistoryService {
     func getHistory(request: ContactRequest) -> Single<[Contact]> {
         return networkProvider

@@ -8,19 +8,17 @@
 
 import UIKit
 
-class NibView: UIView {
+class UINibView: UIView {
     
     @IBOutlet var view: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         initView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         initView()
     }
     
@@ -29,7 +27,8 @@ class NibView: UIView {
     }
     
     func initView() {
-        Bundle.main.loadNibNamed(nibName, owner: self, options: nil)
+        Bundle(for: type(of: self)).loadNibNamed(nibName, owner: self, options: nil)
+        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         view.frame = bounds
         addSubview(view)
     }

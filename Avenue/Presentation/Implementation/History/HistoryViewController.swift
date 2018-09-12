@@ -13,8 +13,6 @@ import RxCocoa
 
 final class HistoryViewController: BaseViewController<HistoryViewModel, HistoryViewState> {
     
-    static let identification = "HistoryView"
-    
     // View reference
     @IBOutlet weak var tableHistory: UITableView!
     
@@ -27,11 +25,6 @@ final class HistoryViewController: BaseViewController<HistoryViewModel, HistoryV
         prepareTable()
         
         self.reducer?.reduce(with: .loadHistory)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     private func prepareTable() {

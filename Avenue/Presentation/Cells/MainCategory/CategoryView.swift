@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-class CategoryView: NibView {
+@IBDesignable
+class CategoryView: UINibView {
     @IBOutlet weak var imageCategory: UIImageView!
     @IBOutlet weak var labelCategory: UILabel!
+    
 }

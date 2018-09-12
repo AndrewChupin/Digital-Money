@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-final class AccountTitleView: NibView {
+final class AccountTitleView: UINibView {
     
     @IBOutlet weak var imageBackgrount: UIImageView!
     @IBOutlet weak var labelBalance: UILabel!
