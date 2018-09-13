@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="bottomConstaint" destination="JOO-Qf-pSi" id="Q5r-N6-Wff"/>
                 <outlet property="fieldPhone" destination="HRR-UJ-lzJ" id="s7X-3h-MzR"/>
+                <outlet property="mainButton" destination="h7T-Mh-8uu" id="EWf-Qz-DWw"/>
                 <outlet property="middleConstraint" destination="WYa-BO-OXy" id="BLK-BG-dzQ"/>
                 <outlet property="topConstraint" destination="DOd-AP-vHT" id="8HT-0B-l6s"/>
                 <outlet property="view" destination="iN0-l3-epB" id="sja-3e-Oib"/>

@@ -8,3 +8,5 @@
 
 "sign_in" = "Войти";
 "forgot_password" = "Забыли пароль?";
+
+"payment_history" = "История платежей";

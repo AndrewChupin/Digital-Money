@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+@IBDesignable
 final class AccountTitleView: UINibView {
     
     @IBOutlet weak var imageBackgrount: UIImageView!

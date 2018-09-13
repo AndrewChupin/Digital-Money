@@ -28,7 +28,6 @@ class UINibView: UIView {
     
     func initView() {
         Bundle(for: type(of: self)).loadNibNamed(nibName, owner: self, options: nil)
-        view.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         view.frame = bounds
         addSubview(view)
     }

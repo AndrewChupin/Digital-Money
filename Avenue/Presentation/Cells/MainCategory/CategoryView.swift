@@ -14,4 +14,8 @@ class CategoryView: UINibView {
     @IBOutlet weak var imageCategory: UIImageView!
     @IBOutlet weak var labelCategory: UILabel!
     
+    func setup(image: UIImage, label: String) {
+        imageCategory.image = image
+        labelCategory.text = label
+    }
 }
