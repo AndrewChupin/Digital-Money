@@ -18,7 +18,7 @@ final class Contact {
 }
 
 extension Contact: Decodable {
-    enum ContactField: String, CodingKey { // declaring our keys
+    private enum ContactField: String, CodingKey { // declaring our keys
         case name = "name"
         case phone = "phone"
         case image = "image"

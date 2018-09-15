@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+
+protocol AuthService: class {
+    func signIn(request: AuthRequest) -> Single<Account>
+}

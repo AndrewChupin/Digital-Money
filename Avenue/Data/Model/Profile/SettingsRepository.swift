@@ -10,5 +10,6 @@ import Foundation
 
 protocol SettingsRepository {
     var constactsStateToken: String { get set }
+    var authToken: String { get set }
 }
 

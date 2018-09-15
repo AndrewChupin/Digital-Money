@@ -21,8 +21,5 @@ extension HistoryWebService: HistoryService {
             .rx
             .request(.loadHistory(request: request), callbackQueue: DispatchQueue.global(qos: .background))
             .map([Contact].self)
-            .flatMap({ contacts in
-                return Single.just(contacts)
-            })
     }
 }

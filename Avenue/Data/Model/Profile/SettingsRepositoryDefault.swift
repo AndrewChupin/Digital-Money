@@ -10,6 +10,7 @@ import Foundation
 
 enum RequestKey: String {
     case contasts = "constacts_token_key"
+    case auth = "auth_token_key"
 }
 
 class SettingsRepositoryDefault {
@@ -21,15 +22,14 @@ class SettingsRepositoryDefault {
 }
 
 extension SettingsRepositoryDefault: SettingsRepository {
-
+    var authToken: String {
+        get { return defaults.string(forKey: RequestKey.auth.rawValue) ?? String.empty }
+        set { defaults.set(newValue, forKey: RequestKey.auth.rawValue) }
+    }
+    
     var constactsStateToken: String {
-        get {
-            let token = defaults.string(forKey: RequestKey.contasts.rawValue) ?? String.empty
-            return token
-        }
-        set {
-            defaults.set(newValue, forKey: RequestKey.contasts.rawValue)
-        }
+        get { return defaults.string(forKey: RequestKey.contasts.rawValue) ?? String.empty }
+        set { defaults.set(newValue, forKey: RequestKey.contasts.rawValue) }
     }
 }
 
