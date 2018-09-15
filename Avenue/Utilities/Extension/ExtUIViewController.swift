@@ -17,8 +17,6 @@ fileprivate class KeyboardAssociatedItem: NSObject {
     var hideBlock: (() -> Void)?
 }
 
-/// Протокол дает возможность привязать значение одного констрейнта
-/// к событиям **появления**(*.UIKeyboardWillShow*) и **скрытия**(*.UIKeyboardWillHide*) клавиатуры.
 protocol KeyboardEventsProtocol: class {
     func registerKeyBoardEvents(constraint: NSLayoutConstraint,
                                 diffValue: CGFloat,
@@ -41,10 +39,6 @@ extension UIViewController: KeyboardEventsProtocol {
         }
     }
     
-    /// - Parameters:
-    ///   - constraint: Констреинт на который влияет появление клавиатуры.
-    ///   - diffValue: Значение на которое необходимо уменьшить высоту клавиатуры или абсолютное значение изменения констрейнта.
-    ///   - useKeyboardHeight: Флаг, надо ли использовать при расчетах высоту клавиатуры.
     func registerKeyBoardEvents(constraint: NSLayoutConstraint, diffValue: CGFloat = 0, useKeyboardHeight: Bool = true, showBlock: ((CGFloat) -> Void)? = nil, hideBlock: (() -> Void)? = nil) {
         let item = KeyboardAssociatedItem()
         item.constraint = constraint
