@@ -9,13 +9,7 @@ import RxCocoa
 
 // MARK - Actions
 enum AccountActions: Actionable {
-    case signIn(SignInData)
-}
-
-// MARK - SignIn Action Presentation Data
-struct SignInData {
-    let login: String
-    let code: String
+    
 }
 
 // MARK - State
@@ -35,9 +29,6 @@ class AccountViewModel: BaseViewModel, AccountStatementReducer {
     var viewState: BehaviorRelay<AccountViewState> = BehaviorRelay(value: AccountViewState())
     
     func reduce(with action: AccountActions) {
-        switch action {
-        case .signIn(let name):
-            print(name)
-        }
+        // TODO
     }
 }

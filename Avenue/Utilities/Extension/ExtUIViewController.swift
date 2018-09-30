@@ -99,7 +99,6 @@ extension UIViewController: KeyboardEventsProtocol {
 }
 
 extension UIViewController {
-    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -122,5 +121,9 @@ extension UIViewController {
         viewController.willMove(toParentViewController: nil)
         viewController.view.removeFromSuperview()
         viewController.removeFromParentViewController()
+    }
+    
+     static func viewName() -> String {
+        return className.replacingOccurrences(of: "Controller", with: "")
     }
 }

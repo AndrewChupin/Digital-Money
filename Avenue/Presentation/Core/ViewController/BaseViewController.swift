@@ -12,12 +12,18 @@ import RxSwift
 
 class BaseViewController<ReducerType: StatmentReducer, ViewStateType: BaseViewState>: UIViewController, Renderable {
     typealias ViewState = ViewStateType
-    var reducer: ReducerType? = nil
-    let bag = DisposeBag()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private let bag = DisposeBag()
+    
+    var reducer: ReducerType? = nil
+    
+    init(name: String, reducer: ReducerType) {
+        super.init(nibName: name, bundle: nil)
+        self.reducer = reducer
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     override func viewDidAppear(_ animated: Bool) {

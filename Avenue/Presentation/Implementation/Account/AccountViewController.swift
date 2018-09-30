@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountViewController: BaseViewController<AccountViewModel, AccountViewState> {
     
     @IBOutlet weak var accountView: AccountTitleView!
     @IBOutlet weak var stackView: UIStackView!
@@ -16,6 +16,10 @@ class AccountViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    override func viewDidLoad() {
+        initUi()
     }
     
     private func initUi() {

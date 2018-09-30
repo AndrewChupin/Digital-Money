@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AuthViewController: UIViewController {
+class AuthViewController: BaseViewController<AuthViewModel, AuthViewState> {
     
     @IBOutlet weak var fieldPhone: UITextField!
     @IBOutlet weak var bottomConstaint: NSLayoutConstraint!
@@ -21,7 +21,8 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         registerKeyBoardEvents(constraint: bottomConstaint)
         mainButton.onClick = {
-            self.navigationController?.pushViewController(AccountViewController(nibName: "AccountView", bundle: nil), animated: true)
+            let vc = AccountViewController(name: AccountViewController.viewName(), reducer: AccountViewModel())
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     

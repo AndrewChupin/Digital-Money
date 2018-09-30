@@ -7,3 +7,40 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
+
+// MARK - Actions
+enum AuthActions: Actionable {
+    case signIn(SignInData)
+}
+
+// MARK - SignIn Action Presentation Data
+struct SignInData {
+    let login: String
+    let code: String
+}
+
+// MARK - State
+class AuthViewState: BaseViewState {
+    var primaryState: PrimaryState = .common
+    
+    func copy(with zone: NSZone? = nil) -> Any {
+        return AuthViewState()
+    }
+}
+
+// MARK - Reducer
+protocol AuthStatementReducer: StatmentReducer where Action == AuthActions, ViewState == AuthViewState {}
+
+// MARK - ViewModel
+class AuthViewModel: BaseViewModel, AuthStatementReducer {
+    var viewState: BehaviorRelay<AuthViewState> = BehaviorRelay(value: AuthViewState())
+    
+    func reduce(with action: AuthActions) {
+        switch action {
+        case .signIn(let name):
+            print(name)
+        }
+    }
+}

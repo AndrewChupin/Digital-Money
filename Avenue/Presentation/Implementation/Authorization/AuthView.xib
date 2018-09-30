@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -109,7 +110,7 @@
                             <constraints>
                                 <constraint firstItem="N6v-1B-AxO" firstAttribute="centerX" secondItem="447-9a-iYh" secondAttribute="centerX" id="2Qd-VW-kRY"/>
                                 <constraint firstItem="m4H-gf-Oeb" firstAttribute="top" secondItem="m5A-3r-sgb" secondAttribute="bottom" constant="16" id="CaA-AL-372"/>
-                                <constraint firstItem="m5A-3r-sgb" firstAttribute="top" secondItem="447-9a-iYh" secondAttribute="top" constant="150" id="DOd-AP-vHT"/>
+                                <constraint firstItem="m5A-3r-sgb" firstAttribute="top" secondItem="447-9a-iYh" secondAttribute="top" priority="250" constant="150" id="DOd-AP-vHT"/>
                                 <constraint firstAttribute="trailing" secondItem="m4H-gf-Oeb" secondAttribute="trailing" constant="16" id="E9X-Qm-dCJ"/>
                                 <constraint firstAttribute="bottom" secondItem="hvY-6t-NIg" secondAttribute="bottom" constant="16" id="HRW-VW-mkA"/>
                                 <constraint firstItem="m5A-3r-sgb" firstAttribute="centerX" secondItem="447-9a-iYh" secondAttribute="centerX" id="HWc-0X-ct4"/>

@@ -9,5 +9,5 @@
 import Foundation
 
 func createAuthScreen() -> AuthViewController {
-    return AuthViewController(nibName: "AuthView", bundle: nil)
+    return AuthViewController(name: AuthViewController.viewName(), reducer: AuthViewModel())
 }
