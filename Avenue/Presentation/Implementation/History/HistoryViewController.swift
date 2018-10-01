@@ -9,16 +9,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Kingfisher
 
-
-final class HistoryViewController: BaseViewController<HistoryViewModel, HistoryViewState> {
+final class HistoryViewController: BaseViewController<HistoryViewModel, HistoryViewState>, UITableViewDataSource, UITableViewDelegate {
     
     // View reference
     @IBOutlet weak var tableHistory: UITableView!
-    
-    // Bind reference
-    fileprivate var contacts: [Contact] = []
-    fileprivate let disposable = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +24,23 @@ final class HistoryViewController: BaseViewController<HistoryViewModel, HistoryV
     }
 
     private func prepareTable() {
-        self.tableHistory.register(ContactTableViewCell.nib, forCellReuseIdentifier: ContactTableViewCell.identification)
+        self.tableHistory.register(HistoryTableViewCell.nib, forCellReuseIdentifier: HistoryTableViewCell.identification)
     }
     
     override func render(viewState: HistoryViewState) {
-        /*viewState.contacts.drive(self.tableHistory.rx.items(cellIdentifier:ContactTableViewCell.identification, cellType: ContactTableViewCell.self)) { _, contact, cell in
-            cell.setup(with: contact)
-            }
-            .disposed(by: self.disposable)*/
+        tableHistory.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.reducer?.viewState.value.history.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identification) as! HistoryTableViewCell
+        
+        if let history = self.reducer?.viewState.value.history[indexPath.row] {
+            cell.setup(with: history)
+        }
+        return cell
     }
 }
-

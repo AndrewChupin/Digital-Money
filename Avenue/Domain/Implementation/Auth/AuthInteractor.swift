@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol AuthInteractor {
-    func signIn() -> Single<Account>
+    func signIn(data: SignInData) -> Single<Account>
 }
 
 final class AuthInteractorDefault {
@@ -24,7 +24,7 @@ final class AuthInteractorDefault {
 }
 
 extension AuthInteractorDefault: AuthInteractor {
-    func signIn() -> Single<Account> {
+    func signIn(data: SignInData) -> Single<Account> {
         let request = AuthRequest(authToken: settingsRepository.authToken)
         return authService.signIn(request: request) // TOOD CHANGE TOKEN
     }

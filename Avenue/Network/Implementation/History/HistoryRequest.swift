@@ -1,5 +1,5 @@
 //
-//  ContactRequest.swift
+//  HistoryRequest.swift
 //  Avenue
 //
 //  Created by Andrew Chupin on 31.03.2018.
@@ -12,11 +12,11 @@ enum HistoryParameters: String {
     case token = "token"
 }
 
-struct ContactRequest {
+struct HistoryRequest {
     let token: String
 }
 
-extension ContactRequest: RequestData {
+extension HistoryRequest: RequestData {
     func getArguments() -> Parameters {
         var result: Parameters = [:]
         result[HistoryParameters.token.rawValue] = token

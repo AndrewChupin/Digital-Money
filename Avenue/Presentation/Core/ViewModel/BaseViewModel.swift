@@ -9,5 +9,5 @@
 import RxSwift
 
 class BaseViewModel: ReactiveActions {
-    
+    let bag = DisposeBag()
 }

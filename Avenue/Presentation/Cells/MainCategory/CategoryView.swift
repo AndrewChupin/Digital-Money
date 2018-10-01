@@ -13,9 +13,14 @@ import UIKit
 class CategoryView: UINibView {
     @IBOutlet weak var imageCategory: UIImageView!
     @IBOutlet weak var labelCategory: UILabel!
+    var onClick: (() -> Void)? = nil
     
     func setup(image: UIImage, label: String) {
         imageCategory.image = image
         labelCategory.text = label
+    }
+    
+    @IBAction func categoryClick(_ sender: Any) {
+        onClick?()
     }
 }

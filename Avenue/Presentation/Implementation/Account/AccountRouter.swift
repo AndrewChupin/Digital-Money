@@ -7,3 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
+func createAccountScreen() -> UIViewController {
+    return AccountViewController(name: AccountViewController.viewName(), reducer: AccountViewModel())
+}

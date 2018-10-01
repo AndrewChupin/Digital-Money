@@ -7,7 +7,16 @@
 //
 
 import Foundation
+import Moya
 
 func createAuthScreen() -> AuthViewController {
-    return AuthViewController(name: AuthViewController.viewName(), reducer: AuthViewModel())
+    return AuthViewController(
+        name: AuthViewController.viewName(),
+        reducer: AuthViewModel(
+            interactor: AuthInteractorDefault(
+                authService: AuthWebService(networkProvider: MoyaProvider<AuthTarget>()),
+                settingsRepository: SettingsRepositoryDefault(defaults: UserDefaults())
+            )
+        )
+    )
 }

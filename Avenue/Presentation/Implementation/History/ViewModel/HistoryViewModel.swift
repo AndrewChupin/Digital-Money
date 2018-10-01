@@ -18,11 +18,11 @@ enum HistoryActions: Actionable {
 // MARK - ViewState
 class HistoryViewState: BaseViewState {
     var primaryState: PrimaryState = .common
-    var contacts: [Contact] = []
+    var history: [History] = []
     
-    init(state: PrimaryState = .common, contacts: [Contact] = []) {
+    init(state: PrimaryState = .common, history: [History] = []) {
         self.primaryState = state
-        self.contacts = contacts
+        self.history = history
     }
     
     func copy(with zone: NSZone? = nil) -> Any {
@@ -37,13 +37,13 @@ protocol HistoryStatementReducer: StatmentReducer where Action == HistoryActions
 class HistoryViewModel: BaseViewModel, HistoryStatementReducer {
     
     // Use Cases
-    private var contactsInteractor: HistoryInteractor
+    private var historyInteractor: HistoryInteractor
     // Data
     var viewState: BehaviorRelay<HistoryViewState> = BehaviorRelay(value: HistoryViewState())
     
     // Constructor
-    init(contactsInteractor: HistoryInteractor) {
-        self.contactsInteractor = contactsInteractor
+    init(historyInteractor: HistoryInteractor) {
+        self.historyInteractor = historyInteractor
     }
     
     func reduce(with action: HistoryActions) {
@@ -55,10 +55,11 @@ class HistoryViewModel: BaseViewModel, HistoryStatementReducer {
     
     // Actions
     private func loadUsers() {
-        contactsInteractor.findHistory()
-            .bindSubscribe(success: { [weak self] (contactsData) in
-                self?.viewState.accept(HistoryViewState(contacts: contactsData))
-            })
+        historyInteractor.findHistory()
+            .bindSubscribe(success: { [weak self] (historyData) in
+                print(historyData)
+                self?.viewState.accept(HistoryViewState(history: historyData))
+            }).disposed(by: bag)
     }
 }
 

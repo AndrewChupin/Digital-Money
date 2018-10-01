@@ -10,24 +10,24 @@ import Foundation
 import RxSwift
 
 protocol HistoryInteractor {
-    func findHistory() -> Single<[Contact]>
+    func findHistory() -> Single<[History]>
 }
 
 final class HistoryInteractorDefault {
-    private let contactsService: HistoryService
-    private let contactsRepository: HistoryRepository
+    private let historyService: HistoryService
+    private let historyRepository: HistoryRepository
     private let settingsRepository: SettingsRepository
     
-    init(contactsService: HistoryService, contactsRepository: HistoryRepository, settingsRepository: SettingsRepository) {
-        self.contactsService = contactsService
-        self.contactsRepository = contactsRepository
+    init(historyService: HistoryService, historyRepository: HistoryRepository, settingsRepository: SettingsRepository) {
+        self.historyService = historyService
+        self.historyRepository = historyRepository
         self.settingsRepository = settingsRepository
     }
 }
 
 extension HistoryInteractorDefault: HistoryInteractor {
-    func findHistory() -> Single<[Contact]> {
+    func findHistory() -> Single<[History]> {
         let constactsToken = settingsRepository.constactsStateToken
-        return contactsService.getHistory(request: ContactRequest(token: constactsToken)) // TOOD CHANGE TOKEN
+        return historyService.getHistory(request: HistoryRequest(token: constactsToken)) // TOOD CHANGE TOKEN
     }
 }

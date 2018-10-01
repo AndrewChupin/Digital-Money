@@ -8,6 +8,6 @@ import RxSwift
 
 protocol HistoryRepository {
     var count: Int { get }
-    func findAll() -> Single<[Contact]>
-    func findPart(partNumber: Int) -> Single<[Contact]>
+    func findAll() -> Single<[History]>
+    func findPart(partNumber: Int) -> Single<[History]>
 }

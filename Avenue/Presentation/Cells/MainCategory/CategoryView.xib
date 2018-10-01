@@ -35,11 +35,21 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khG-X2-Ag7">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <connections>
+                        <action selector="categoryClick:" destination="-1" eventType="touchUpInside" id="OES-fj-JUz"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="khG-X2-Ag7" firstAttribute="bottom" secondItem="BkW-Zm-PvZ" secondAttribute="bottom" id="5ZF-x4-jvm"/>
                 <constraint firstAttribute="trailing" secondItem="zco-pv-kxR" secondAttribute="trailing" constant="12" id="5ic-nD-doH"/>
+                <constraint firstItem="khG-X2-Ag7" firstAttribute="trailing" secondItem="BkW-Zm-PvZ" secondAttribute="trailing" id="GMB-R7-xl7"/>
                 <constraint firstItem="7rD-Eq-5Vi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="18" id="HhV-As-fjA"/>
+                <constraint firstItem="khG-X2-Ag7" firstAttribute="leading" secondItem="BkW-Zm-PvZ" secondAttribute="leading" id="R1U-u4-m1k"/>
+                <constraint firstItem="khG-X2-Ag7" firstAttribute="top" secondItem="BkW-Zm-PvZ" secondAttribute="top" id="URp-Ie-yvX"/>
                 <constraint firstItem="7rD-Eq-5Vi" firstAttribute="top" secondItem="BkW-Zm-PvZ" secondAttribute="top" constant="18" id="gHS-jg-HF3"/>
                 <constraint firstItem="zco-pv-kxR" firstAttribute="leading" secondItem="7rD-Eq-5Vi" secondAttribute="trailing" constant="18" id="kOu-W9-mqa"/>
                 <constraint firstItem="BkW-Zm-PvZ" firstAttribute="bottom" secondItem="7rD-Eq-5Vi" secondAttribute="bottom" constant="18" id="oWC-ct-IMg"/>
@@ -63,7 +73,7 @@
                     <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
-            <point key="canvasLocation" x="41" y="-232"/>
+            <point key="canvasLocation" x="40.799999999999997" y="-232.08395802098951"/>
         </view>
     </objects>
     <resources>

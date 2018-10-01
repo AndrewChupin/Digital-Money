@@ -40,6 +40,7 @@ class AccountViewController: BaseViewController<AccountViewModel, AccountViewSta
         // History category
         let historyCategory = CategoryView()
         historyCategory.setup(image: #imageLiteral(resourceName: "history"), label: "payment_history".localized)
+        historyCategory.onClick = { self.navigationController?.pushViewController(createHistoryScreen(), animated: true) }
         views.append(historyCategory)
         
         return views

@@ -22,6 +22,8 @@ final class Account {
     }
 }
 
+extension Account: CustomStringConvertible {}
+
 extension Account: Decodable {
     private enum AccountFields: String, CodingKey {
         case firstName = "firstName"

@@ -23,7 +23,11 @@ struct SignInData {
 
 // MARK - State
 class AuthViewState: BaseViewState {
-    var primaryState: PrimaryState = .common
+    let primaryState: PrimaryState
+    
+    init(state: PrimaryState = .common) {
+        self.primaryState = state
+    }
     
     func copy(with zone: NSZone? = nil) -> Any {
         return AuthViewState()
@@ -36,11 +40,20 @@ protocol AuthStatementReducer: StatmentReducer where Action == AuthActions, View
 // MARK - ViewModel
 class AuthViewModel: BaseViewModel, AuthStatementReducer {
     var viewState: BehaviorRelay<AuthViewState> = BehaviorRelay(value: AuthViewState())
+    private var interactor: AuthInteractor
+    
+    init(interactor: AuthInteractor) {
+        self.interactor = interactor
+    }
     
     func reduce(with action: AuthActions) {
         switch action {
-        case .signIn(let name):
-            print(name)
+        case .signIn(let data):
+            interactor.signIn(data: data)
+                .bindSubscribe(success: { account in
+                    print(account)
+                    self.viewState.accept(AuthViewState(state: .succeess))
+            }).disposed(by: bag)
         }
     }
 }

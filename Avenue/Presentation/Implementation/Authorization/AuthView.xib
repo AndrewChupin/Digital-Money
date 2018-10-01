@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="bottomConstaint" destination="JOO-Qf-pSi" id="Q5r-N6-Wff"/>
                 <outlet property="fieldPhone" destination="HRR-UJ-lzJ" id="s7X-3h-MzR"/>
+                <outlet property="imageHeightConstraint" destination="UIg-Fk-pp2" id="xeP-zo-KOY"/>
                 <outlet property="mainButton" destination="h7T-Mh-8uu" id="EWf-Qz-DWw"/>
                 <outlet property="middleConstraint" destination="WYa-BO-OXy" id="BLK-BG-dzQ"/>
                 <outlet property="topConstraint" destination="DOd-AP-vHT" id="8HT-0B-l6s"/>

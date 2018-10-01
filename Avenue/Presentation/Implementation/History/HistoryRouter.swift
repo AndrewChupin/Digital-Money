@@ -9,17 +9,19 @@
 import Foundation
 import Moya
 
-func createConstactsScreen() -> HistoryViewController {
-    let contactsViewController = HistoryViewController(
+func createHistoryScreen() -> HistoryViewController {
+    let historyViewController = HistoryViewController(
         name: HistoryViewController.viewName(),
         reducer: HistoryViewModel(
-            contactsInteractor: HistoryInteractorDefault(
-                contactsService: HistoryWebService(
-                networkProvider: MoyaProvider<HistoryTarget>()
-            ),
-            contactsRepository: ContactCoreRepository(),
-            settingsRepository: SettingsRepositoryDefault(defaults: UserDefaults()) // TODO add label
-    )))
-    return contactsViewController
+            historyInteractor: HistoryInteractorDefault(
+                historyService: HistoryWebService(
+                    networkProvider: MoyaProvider<HistoryTarget>()
+                ),
+                historyRepository: HistoryCoreRepository(),
+                settingsRepository: SettingsRepositoryDefault(defaults: UserDefaults()) // TODO add label
+            )
+        )
+    )
+    return historyViewController
 }
 

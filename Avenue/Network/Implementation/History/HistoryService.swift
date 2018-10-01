@@ -7,5 +7,5 @@ import Foundation
 import RxSwift
 
 protocol HistoryService: class {
-    func getHistory(request: ContactRequest) -> Single<[Contact]>
+    func getHistory(request: HistoryRequest) -> Single<[History]>
 }

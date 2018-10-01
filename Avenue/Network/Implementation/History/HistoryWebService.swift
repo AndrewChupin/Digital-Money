@@ -16,10 +16,10 @@ class HistoryWebService {
 }
 
 extension HistoryWebService: HistoryService {
-    func getHistory(request: ContactRequest) -> Single<[Contact]> {
+    func getHistory(request: HistoryRequest) -> Single<[History]> {
         return networkProvider
             .rx
             .request(.loadHistory(request: request), callbackQueue: DispatchQueue.global(qos: .background))
-            .map([Contact].self)
+            .map([History].self)
     }
 }

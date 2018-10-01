@@ -6,32 +6,23 @@
 import Foundation
 import RxSwift
 
-class ContactCoreRepository {
+class HistoryCoreRepository {}
 
-}
-
-extension ContactCoreRepository: HistoryRepository {
+extension HistoryCoreRepository: HistoryRepository {
 
     var count: Int {
         return 12
     }
 
-    func findAll() -> Single<[Contact]> {
-        return Single.just(contacts())
+    func findAll() -> Single<[History]> {
+        return Single.just(history())
     }
 
-    func findPart(partNumber: Int) -> Single<[Contact]> {
-        return Single.just(contacts())
+    func findPart(partNumber: Int) -> Single<[History]> {
+        return Single.just(history())
     }
 
-    private func contacts() -> [Contact] {
-        return [
-            Contact(name: "Andrew Chupin", phone: "79042797431", image: "http://www.xcom-hobby.ru/mod/site/img/default-userpic.png"),
-            Contact(name: "Mike Chupin", phone: "79042797431", image: "http://www.xcom-hobby.ru/mod/site/img/default-userpic.png"),
-            Contact(name: "John Chupin", phone: "79042797431", image: "http://www.xcom-hobby.ru/mod/site/img/default-userpic.png"),
-            Contact(name: "Anthony Chupin", phone: "79042797431", image: "http://www.xcom-hobby.ru/mod/site/img/default-userpic.png"),
-            Contact(name: "Matt Chupin", phone: "79042797431", image: "http://www.xcom-hobby.ru/mod/site/img/default-userpic.png"),
-            Contact(name: "Jayson Chupin", phone: "79042797431", image: "http://www.xcom-hobby.ru/mod/site/img/default-userpic.png")
-        ]
+    private func history() -> [History] {
+        return []
     }
 }

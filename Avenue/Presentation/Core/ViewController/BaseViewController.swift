@@ -11,6 +11,7 @@ import RxCocoa
 import RxSwift
 
 class BaseViewController<ReducerType: StatmentReducer, ViewStateType: BaseViewState>: UIViewController, Renderable {
+    
     typealias ViewState = ViewStateType
     
     private let bag = DisposeBag()
@@ -27,18 +28,12 @@ class BaseViewController<ReducerType: StatmentReducer, ViewStateType: BaseViewSt
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        reducer?.viewState.asDriver().drive(onNext: { vs in
-            
-        }, onCompleted: {
-            
-        }, onDisposed: {
-            
+        reducer?.viewState.asDriver().drive(onNext: { state in
+            guard state is ViewStateType else {
+                return
+            }
+            self.render(viewState: state as! ViewStateType)
         }).disposed(by: bag)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func render(viewState: ViewStateType) {

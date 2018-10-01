@@ -56,11 +56,12 @@
 		4953ACB52148F317007ECF6F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953ACB42148F317007ECF6F /* GradientView.swift */; };
 		4953ACBB21492DAC007ECF6F /* UIBaseDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4953ACBA21492DAC007ECF6F /* UIBaseDesignable.swift */; };
 		4953ACC421492F8F007ECF6F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4953ACC221492F8F007ECF6F /* Localizable.strings */; };
+		499010A02161F82C001F119A /* ExtCustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4990109F2161F82C001F119A /* ExtCustomStringConvertible.swift */; };
 		682520FDB4FC44E44A93A9D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68252B9D197840B9C77D88F3 /* AppDelegate.swift */; };
 		682523710D88F34FCB92B813 /* HistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6825226A6258326C83A8A726 /* HistoryRepository.swift */; };
 		682525654B3CD862C52A10B4 /* HistoryCoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68252EAABB076E260D20AB6C /* HistoryCoreRepository.swift */; };
 		682525A097C2FE4B74190403 /* AvenueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682526003C40DDE8B7F77489 /* AvenueError.swift */; };
-		682529303D034BC689E48925 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6825258F03C6F45FD8284B0A /* Contact.swift */; };
+		682529303D034BC689E48925 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6825258F03C6F45FD8284B0A /* History.swift */; };
 		6825294378B2474ADB2CC6E0 /* HistoryWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68252E44A3865852C7B4D11C /* HistoryWebService.swift */; };
 		6825299851DE582B18589980 /* HistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68252DD094353D4CFC32455D /* HistoryService.swift */; };
 		ABC3505114C1172EC7512756 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC359391B74AEE4F026570F /* HistoryTableViewCell.swift */; };
@@ -160,10 +161,11 @@
 		4953ACB42148F317007ECF6F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		4953ACBA21492DAC007ECF6F /* UIBaseDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBaseDesignable.swift; sourceTree = "<group>"; };
 		4953ACC321492F8F007ECF6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4990109F2161F82C001F119A /* ExtCustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtCustomStringConvertible.swift; sourceTree = "<group>"; };
 		4CAC9CDFEF3316EC6E91E233 /* Pods-AvenueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvenueTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AvenueTests/Pods-AvenueTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D1BAF18F29BDA71532D01AA /* Pods_Avenue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Avenue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6825226A6258326C83A8A726 /* HistoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRepository.swift; sourceTree = "<group>"; };
-		6825258F03C6F45FD8284B0A /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		6825258F03C6F45FD8284B0A /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		682526003C40DDE8B7F77489 /* AvenueError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvenueError.swift; sourceTree = "<group>"; };
 		68252B9D197840B9C77D88F3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68252DD094353D4CFC32455D /* HistoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryService.swift; sourceTree = "<group>"; };
@@ -420,6 +422,7 @@
 				49521CFA2148570C001CE1DB /* ExtUITableView.swift */,
 				49521CFC2148571E001CE1DB /* ExtUICollectionView.swift */,
 				4953ACB12148EE29007ECF6F /* ExtUIView.swift */,
+				4990109F2161F82C001F119A /* ExtCustomStringConvertible.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -707,7 +710,7 @@
 		AF81C27C206F754000656E8F /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				6825258F03C6F45FD8284B0A /* Contact.swift */,
+				6825258F03C6F45FD8284B0A /* History.swift */,
 				6825226A6258326C83A8A726 /* HistoryRepository.swift */,
 				68252EAABB076E260D20AB6C /* HistoryCoreRepository.swift */,
 			);
@@ -969,13 +972,14 @@
 				4953ACB52148F317007ECF6F /* GradientView.swift in Sources */,
 				4953ACB22148EE29007ECF6F /* ExtUIView.swift in Sources */,
 				AF802129206F533000849EBF /* Avenue.xcdatamodeld in Sources */,
-				682529303D034BC689E48925 /* Contact.swift in Sources */,
+				682529303D034BC689E48925 /* History.swift in Sources */,
 				682523710D88F34FCB92B813 /* HistoryRepository.swift in Sources */,
 				AF442ABE20B608E2006E654F /* SettingsRepository.swift in Sources */,
 				4932493B214A342B0063FD44 /* BaseRouter.swift in Sources */,
 				AF30E7DF206FDFE7003D73E2 /* HistoryRequest.swift in Sources */,
 				49324954214ABA420063FD44 /* AccountRepository.swift in Sources */,
 				49324948214ABA000063FD44 /* AuthService.swift in Sources */,
+				499010A02161F82C001F119A /* ExtCustomStringConvertible.swift in Sources */,
 				4953ACA92148E9BC007ECF6F /* AuthViewModel.swift in Sources */,
 				49521CE821484C2F001CE1DB /* PluginConnection.swift in Sources */,
 				6825299851DE582B18589980 /* HistoryService.swift in Sources */,
